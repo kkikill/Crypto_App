@@ -2,6 +2,7 @@ package com.example.cryptoapp.activity;
 
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import com.example.cryptoapp.Adapter.CryptoWallerAdapter;
 import com.example.cryptoapp.Domain.CryptoWallet;
 import com.example.cryptoapp.R;
 import com.example.cryptoapp.databinding.ActivityMainBinding;
+import com.example.cryptoapp.session.SessionManager;
 
 import java.util.ArrayList;
 
@@ -27,11 +29,17 @@ public class MainActivity extends AppCompatActivity {
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        SessionManager session = new SessionManager(this);
+        TextView name = findViewById(R.id.textView3);
+        name.setText(session.getUser());
+
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         RecyclerviewInit();
         
     }
+
 
     private void RecyclerviewInit() {
 

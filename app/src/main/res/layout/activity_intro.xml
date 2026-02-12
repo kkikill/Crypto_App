@@ -62,13 +62,23 @@
                 android:textAlignment="center"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/starBtn"
-                android:layout_width="150dp"
+                android:id="@+id/signinBtn"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/green_bg"
-                android:text="Get started"
+                android:text="Sign in"
+                style="@android:style/Widget.Button"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signupBtn"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/orange_ligh_btn"
+                android:text="Sign up"
                 style="@android:style/Widget.Button"/>
 
         </LinearLayout>
