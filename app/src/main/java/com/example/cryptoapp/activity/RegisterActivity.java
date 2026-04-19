@@ -33,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
             if (ok) {
                 SessionManager session = new SessionManager(this);
                 session.saveUser(name.getText().toString());
+                session.saveUserLogin(login.getText().toString());
 
                 startActivity(new Intent(this, MainActivity.class));
                 finish();

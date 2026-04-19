@@ -11,11 +11,19 @@ public class SessionManager {
         prefs = context.getSharedPreferences("session", Context.MODE_PRIVATE);
     }
 
-    public void saveUser(String name) {
-        prefs.edit().putString("user", name).apply();
+    public void saveUser(String displayName) {
+        prefs.edit().putString("displayName", displayName).apply();
     }
 
     public String getUser() {
-        return prefs.getString("user", "Guest");
+        return prefs.getString("displayName", "Гость");
+    }
+
+    public void saveUserLogin(String login) {
+        prefs.edit().putString("userLogin", login).apply();
+    }
+
+    public String getUserLogin() {
+        return prefs.getString("userLogin", "guest@example.com");
     }
 }
